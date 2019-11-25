@@ -1,6 +1,5 @@
 ansible1.example.com
 ansible2.example.com
-ansible5.example.com
 
 [lamp_test]
 ansible1.example.com

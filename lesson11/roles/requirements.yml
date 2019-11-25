@@ -5,8 +5,4 @@
   version: 1.13
   name: nginx-1.13
 
-# from a tar ball:
-#- src: file:///opt/local/roles/myrole.tar
-#  name: myrole
-
 

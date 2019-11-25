@@ -18,10 +18,10 @@
       file: lesson 12
       baseurl: ftp://control.example.com/repo/
       gpgcheck: yes
-  - name: install repo GPG key
-    rpm_key:
-      key: ftp://control.example.com/repo/repo-gpg-key
-      state: present
+      #  - name: install repo GPG key
+      #    rpm_key:
+      #      key: ftp://control.example.com/repo/repo-gpg-key
+      #      state: present
   - name: install package
     yum:
       name: "{{ my_package }}"
