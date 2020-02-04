@@ -2,7 +2,7 @@
 echo "Control Node Preparation ..."
 yum update -y
 yum install -y epel-release
-yum install -y ansible git bind-utils vim bash-completion
+yum install -y python3 ansible git bind-utils vim bash-completion
 
 PASS=$(echo "ansible" | openssl passwd -1 -stdin)
 useradd -p "$PASS" ansible
