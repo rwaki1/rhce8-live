@@ -2,12 +2,17 @@
 https://www.vagrantup.com/docs/installation/
 
 On OS X the easest way to install is via Homebrew
+
 https://brew.sh/
+
 `/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"`
+
 `brew tap caskroom/cask`
 
 `brew cask install virtualbox`
+
 `brew cask install vagrant`
+
 `brew cask install vagrant-manager`
 
 # ssh into hosts
