@@ -1,7 +1,8 @@
 #!/bin/sh
 echo "Control Node Preparation ..."
+yum update -y
 yum install -y epel-release
-yum install -y ansible git
+yum install -y python3 ansible git bind-utils vim bash-completion
 
 PASS=$(echo "ansible" | openssl passwd -1 -stdin)
 useradd -p "$PASS" ansible
@@ -16,8 +17,8 @@ cat <<EOF >> /etc/hosts
 EOF
 
 su - ansible -c "ssh-keygen -b 2048 -t rsa -f /home/ansible/.ssh/id_rsa -q -P \"\""
-su - ansible -c "sssh-keyscan ansible1.example.com 2>/dev/null >> home/ansible/.ssh/known_hosts"
-su - ansible -c "sssh-keyscan ansible2.example.com 2>/dev/null >> home/ansible/.ssh/known_hosts"
+su - ansible -c "ssh-keyscan ansible1.example.com 2>/dev/null >> home/ansible/.ssh/known_hosts"
+su - ansible -c "ssh-keyscan ansible2.example.com 2>/dev/null >> home/ansible/.ssh/known_hosts"
 su - ansible -c "echo 'ansible' | sshpass ssh-copy-id -f -i /home/ansible/.ssh/id_rsa.pub -o StrictHostKeyChecking=no ansible@ansible1.example.com"
 su - ansible -c "echo 'ansible' | sshpass ssh-copy-id -f -i /home/ansible/.ssh/id_rsa.pub -o StrictHostKeyChecking=no ansible@ansible2.example.com"
 
