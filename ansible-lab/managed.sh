@@ -1,6 +1,7 @@
 #!/bin/sh
 echo "Managed Node Preparation ..."
-yum install -y python3
+yum update -y
+yum install -y python3 bind-utils
 
 sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
 systemctl restart sshd
